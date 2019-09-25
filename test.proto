@@ -1,0 +1,25 @@
+syntax = "proto3";
+package test;
+
+service Test {
+	rpc SendMessage (TestRequest) returns (TestReply) {}
+	rpc GetLetters (Word) returns (stream Letter) {}
+}
+
+message TestRequest {
+	string name = 1;
+	int32 age = 2;
+}
+
+message TestReply {
+	string message = 1;
+}
+
+message Word {
+	string body = 1;	
+}
+
+message Letter {
+	string character = 1;
+}
+
